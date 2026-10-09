@@ -3,13 +3,12 @@
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 const pageTitle = "About";
 const identity = {
-firstName: "Mia",
-hobbies: ["Photography", "Web Development", "Drawing", "Landscaping"]
+firstName: "Mia", 
 };
-
-const happy = true;
-const finished = false;
-const skillColor = "crimson";
+const hobbies = ["Photography", "Web Development", "Drawing", "Landscaping"];
+const hobbyColor = "green";
+const fontWeight = "bold";
+const textCase = "uppercase"
 ---
 
 <html lang="en">
@@ -19,14 +18,21 @@ const skillColor = "crimson";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} >
         <title>{pageTitle}</title>
-        <style>
+        <style define:vars={{hobbyColor, fontWeight, textCase}}>
     h1 {
         color: rgb(130, 55, 216);
         font-size: 4rem;
     }
+
+    h2 {
+        color: rgb(42, 79, 154);
+        font-size: 2rem;
+    }
+
     .hobbies {
-        color: green;
-        font-weight: bold;
+        color: var(--hobbyColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--taxtCase);
     }
     </style>
 
@@ -40,10 +46,13 @@ const skillColor = "crimson";
     <h1>{pageTitle}</h1>
     <h2> Gallery 434: The Space in my Head</h2>
    
-    {happy && <p>Where to begin? My name is {identity.firstName}. </p>}
-     {identity.hobbies.length >= 2 &&
-     <p> Two of my hobbies are {identity.hobbies[0]} and {identity.hobbies[1]} </p>
-     }
+    <p>Where to begin? My name is {identity.firstName}. </p>
+     
+    <p>My hobbies are:</p>
+    <ul>
+        {hobbies.map((hobby) => <li class="hobbies">{hobby}</li>)}
+    </ul>
+     
      <p>
         I made Gallery 434 to challenge myself in several areas of my life, but mainly, I wanted to be more creative.
         At present, Gallery 434 only exists in my head. With the ever evolving world of the internet, I thought I would try my hand at disciplining my practice and learning new skills along the way. 

@@ -1,6 +1,8 @@
 ---
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Footer from '../components/Footer.astro';
+import Header from '../components/header.astro';
 import '../styles/global.css'
 
 const pageTitle = "About";
@@ -40,10 +42,7 @@ const textCase = "uppercase"
 
   </head>
   <body>
-    <a href="/"> -= Home =- </a>
-    <a href="/about/"> -= About=- </a>
-    <a href="/blog/"> -= Updates =- </a>
-    <a href="/art/"> -= Art =- </a>
+    <Header />
 
     <h1>{pageTitle}</h1>
     <h2> Gallery 434: The Space in my Head</h2>
@@ -61,6 +60,6 @@ const textCase = "uppercase"
         I created this website using Astro, a language I have no experience in. It is my hope that over the course of development, the space in my head starts to become the space you see on your screen. 
         My art is for me, but I hope that anyone who stumbles upon this project ends up enjoying it. I know I did :)
     </p>
-    
+    <Footer />
   </body>
 </html>

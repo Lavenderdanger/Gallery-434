@@ -1,6 +1,15 @@
 ---
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const pageTitle = "About";
+const identity = {
+firstName: "Mia",
+hobbies: ["Photography", "Web Development", "Drawing", "Landscaping"]
+};
+
+const happy = true;
+const finished = false;
+const skillColor = "crimson";
 ---
 
 <html lang="en">
@@ -9,7 +18,18 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
+        <title>{pageTitle}</title>
+        <style>
+    h1 {
+        color: rgb(130, 55, 216);
+        font-size: 4rem;
+    }
+    .hobbies {
+        color: green;
+        font-weight: bold;
+    }
+    </style>
+
   </head>
   <body>
     <a href="/"> -= Home =- </a>
@@ -17,12 +37,37 @@
     <a href="/blog/"> -= Updates =- </a>
     <a href="/art/"> -= Art =- </a>
 
-    <h1>About</h1>
-    <h1> Gallery 434: The Space in my Head</h1>
-    <p>Where to begin? My name is Mia. I made Gallery 434 to challenge myself in several areas of my life, but mainly, I wanted to be more creative.
+    <h1>{pageTitle}</h1>
+    <h2> Gallery 434: The Space in my Head</h2>
+   
+    {happy && <p>Where to begin? My name is {identity.firstName}. </p>}
+     {identity.hobbies.length >= 2 &&
+     <p> Two of my hobbies are {identity.hobbies[0]} and {identity.hobbies[1]} </p>
+     }
+     <p>
+        I made Gallery 434 to challenge myself in several areas of my life, but mainly, I wanted to be more creative.
         At present, Gallery 434 only exists in my head. With the ever evolving world of the internet, I thought I would try my hand at disciplining my practice and learning new skills along the way. 
         I created this website using Astro, a language I have no experience in. It is my hope that over the course of development, the space in my head starts to become the space you see on your screen. 
         My art is for me, but I hope that anyone who stumbles upon this project ends up enjoying it. I know I did :)
-    </p>  
+    </p>
+    <article class="bg-gradient-to-br from-white to-blue-50 rounded-xl p-6 shadow-sm border border-gray-100 hover-lift fade-in" style="animation-delay: 0.1s;">
+                <div class="flex items-center mb-4">
+                    <div class="w-16 h-16 bg-gov-blue text-white rounded-full flex items-center justify-center text-xl font-bold mr-4 shadow-md">
+                        MP
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-900">Commissioner Mia Anne Payne</h3>
+                        <p class="text-sm text-gov-blue font-medium">League President</p>
+                    </div>
+                </div>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    Selected by and from the members of the League, Commissioner Payne serves as the first president of the League of Commissioners. 
+                    President Payne is a dedicated public servant committed to transparency, accountability, and the welfare of all citizens.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-auto">
+                    <span class="px-3 py-1 bg-blue-50 text-gov-blue rounded-full text-xs font-medium">Leadership</span>
+                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">East Wing</span>
+                </div>
+            </article>
   </body>
 </html>

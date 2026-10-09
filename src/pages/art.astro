@@ -3,13 +3,15 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/header.astro';
 import '../styles/global.css'
 
+const pageTitle = "Art";
 ---
 
 <body>
     <Header />
-
-  <h1>Gallery 434</h1>
-  <h1>Art</h1>
+  <h1>{pageTitle}</h1>
   <p>This is where I will post my artwork</p>
   <Footer />
+  <script>
+    import "../scripts/menu.js";
+  </script>
 </body>

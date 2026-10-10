@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Greeting from '../components/Greeting';
+
 const pageTitle = "Welcome to Gallery 434";
+
 ---
 
 <BaseLayout pateTitle={pageTitle}>
   <h1>{pageTitle}</h1>
-  <h2>歡迎光臨！</h2>
+    <Greeting client:load messages={["歡迎光臨！","Hej", "Hallo", "Hola", "Bonjour", "你好"]} />
 </BaseLayout>

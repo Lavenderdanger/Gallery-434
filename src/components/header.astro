@@ -1,21 +1,21 @@
 ---
-// Frontmatter
-// use "//" to comment :)
-import Navigation from './navigation.astro'
-import Menu from './menu.astro'
-
+import Menu from './menu.astro';
+import Navigation from './navigation.astro';
+import ThemeIcon from './ThemeIcon.astro';
 ---
-<style>
-  header {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-</style>
 <header>
-    <nav>
-        <Menu />
-        <Navigation />
-    </nav>
+  <nav>
+    <div>
+      <ThemeIcon />
+      <Menu />
+    </div>
+    <Navigation />
+  </nav>
 </header>
 
+<style>
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>

@@ -2,15 +2,16 @@
 import Footer from '../components/Footer.astro';
 import Header from '../components/header.astro';
 import '../styles/global.css'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 const pageTitle = "Art";
 ---
 
 <body>
-    <Header />
+    <BaseLayout pateTitle={pageTitle}>
   <h1>{pageTitle}</h1>
   <p>This is where I will post my artwork</p>
-  <Footer />
+  </BaseLayout>
   <script>
     import "../scripts/menu.js";
   </script>

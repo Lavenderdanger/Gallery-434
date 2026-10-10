@@ -2,8 +2,11 @@
 import Footer from '../components/Footer.astro';
 import Header from '../components/header.astro';
 import '../styles/global.css'
+import BlogPost from '../components/BlogPost.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 const pageTitle = "Updates";
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 <head>
 
@@ -11,15 +14,13 @@ const pageTitle = "Updates";
 
 </head>
 <body>
-    <Header />
+  <BaseLayout pateTitle={pageTitle}>
   <h1>{pageTitle}</h1>
   <p>This is where I will post updates about my journey learning Astro and recent changes to the page :)</p>
   <ul>
-        <li><a href="/posts/post-1/">Post 1</a></li>
-        <li><a href="/posts/post-2/">Post 2</a></li>
-        <li><a href="/posts/post-3/">Post 3</a></li>
-    </ul>
-    <Footer />
+  {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)} 
+  </ul>
+  </BaseLayout>
     <script>
     import "../scripts/menu.js";
   </script>

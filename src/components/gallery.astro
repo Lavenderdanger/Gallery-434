@@ -15,6 +15,38 @@ import '../styles/gallery.css'
             background-position: left top;
             }
 
+        div.desc {
+            padding: 10px;
+            text-align: center;
+            max-height: 280px;
+            overflow: auto;
+            border: 10px outset #99cccc;
+            background-color: rgb(36, 36, 125);
+        }
+        /* 1. New wrapper to put the three displays next to each other */
+        .gallery-wrapper {
+            display: flex;            /* Aligns items side-by-side */
+            justify-content: center;  /* Centers the three displays on the screen */
+            gap: 20px;                /* Adds spacing between each display */
+            width: 100%;
+        }
+
+
+
+        div.gallery:hover {
+            border: 5px solid #777;
+        }
+
+/* 3. Your modified image styling */
+        div.gallery img {
+            width: 100%;             /* Fills the width of the display card */
+            height: 250px;           /* Forces a uniform height for the container box */
+            object-fit: scale-down;     /* Fits the ENTIRE image inside without cropping */
+            object-position: center;
+            background-color: #4c1d95; /* The image centers itself over your background */
+            display: block;          
+        }
+
     </style>
 </head>
 
@@ -22,7 +54,8 @@ import '../styles/gallery.css'
 <main>
        <!-- <img src="/images/bg-divs-borders/div-purple-rose.gif" alt="" class="divider center"> --> 
        <br>
- <div class="'gallery">    
+
+ <div class="gallery">    
     <div class="desc">
         <h2> -= Gallery 434 =- </h2>
          <!-- <img src="/images/art-gallery/img-drawing-girl.gif" alt="" class="right-image show-on-desktop-wide" style="width: 10%;"> -->
@@ -38,23 +71,6 @@ import '../styles/gallery.css'
 <div id="art-years" class="flex-row">
     <a href="#home">2026</a>
     </div>
-        <!--
-            <div class="responsive">
-                <div class="gallery">
-                    <figure>
-                        <a target="_blank"
-                            href="">
-                            <img src=""
-                                alt="" loading="lazy">
-                        </a>
-                    </figure>
-                    <div class="desc">
-                        <figcaption><b>MMM/DD/YYYY</b><br><br>
-                        </figcaption>
-                    </div>
-                </div>
-            </div>
-        -->
 
         <!----------------------------------------------
 
@@ -75,17 +91,37 @@ import '../styles/gallery.css'
                 </div>
             </div>
         -->
+<div class="gallery-wrapper">
     <div class="responsive">
         <div class="gallery">
             <figure>
-                <img src="../assets/APS_A.jpeg" alt="" loading="lazy">
+                <img src="/src/images/APS_A.jpeg" alt="A Drawing" loading="lazy">
             </figure>
-                    <div class="desc">
-                        <figcaption><b>10/12/2026</b><br><br>
-                        </figcaption>
-                    </div>
-                </div>
+            <div class="desc">
+                <figcaption>
+                    <b>10/12/2026</b>
+                    <br>
+                    <p> Grand Avenues Intersecting</p>
+                </figcaption>
             </div>
- 
+        </div>
+    </div>
+
+     <div class="responsive">
+        <div class="gallery">
+            <figure>
+                <img src="/src/images/BigI.jpeg" alt="A Drawing" loading="lazy">
+            </figure>
+            <div class="desc">
+                <figcaption>
+                    <b>09/20/2026</b>
+                    <br>
+                    <p>The Spirit of Stratton</p>
+                </figcaption>
+            </div>
+        </div>
+    </div>
+</div>
+
     </main>
 </body>

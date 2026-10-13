@@ -46,18 +46,23 @@
 
         div.gallery {
             border: 1px solid #ccc;
+            background-color: #4c1d95;
             margin-bottom: 10px;
             height: auto;
+            width: auto;
+            
+            
         }
 
         div.gallery:hover {
-            border: 1px solid #777;
+            border: 5px solid #777;
         }
 
         div.gallery img {
-            width: 100% !important;
-            height: auto;
-            display: inline-block;
+            width: auto;
+            height: 175px;
+            display: block;
+            margin: 0 auto;
         }
 
         div.desc {
@@ -70,7 +75,7 @@
         }
 
         figcaption {
-            background-color: #fefff6ee;
+            background-color: rgb(36, 36, 125);
             border-radius: var(--round-borders);
             padding: 5px;
         }
@@ -82,7 +87,8 @@
         div.responsive {
             padding: 0 6px;
             overflow: auto;
-            width: 33%;
+            width: 45%;
+            text-align: center;
         }
 
         div.clearfix:after {

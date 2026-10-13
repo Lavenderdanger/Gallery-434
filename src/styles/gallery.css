@@ -1,0 +1,175 @@
+
+        :root {
+            /* background colors */
+            background-color: url("/src/assets/pattern.png");
+            
+            --main-background-color: #f3fad1;
+            --sidebar-background-color: url(""),
+                #caf8a4;
+            --sidebar-title-bg-color: #407932;
+
+            /* borders */
+            --border: 2px solid #4e2e0e;
+            --round-borders: 5px;
+            --sidebar-round-borders: 30px;
+        }
+        body {
+            color: white;
+        }
+        
+        .sidebar,
+        #jukebox {
+            width: auto;
+        }
+
+        #container {
+            max-width: 990px;
+        }
+
+        #banner {
+            margin-top: 1px;
+            margin-bottom: 0;
+            width: auto;
+            height: 37px;
+            background-image: url("/images/bg-divs-borders/div-s09-sunflower.gif");
+        }
+
+        main {
+            margin-right: 0;
+            max-width: 100%;
+            margin-left: 0;
+        }
+
+        hr {
+            border: 1.5px solid #7d9777;
+        }
+
+        div.gallery {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            height: auto;
+        }
+
+        div.gallery:hover {
+            border: 1px solid #777;
+        }
+
+        div.gallery img {
+            width: 100% !important;
+            height: auto;
+            display: inline-block;
+        }
+
+        div.desc {
+            padding: 10px;
+            text-align: center;
+            max-height: 280px;
+            overflow: auto;
+            border: 3px outset #99cccc;
+            background-image: url("/images/bg-divs-borders/bg-blue-green-elegant.gif");
+        }
+
+        figcaption {
+            background-color: #fefff6ee;
+            border-radius: var(--round-borders);
+            padding: 5px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        div.responsive {
+            padding: 0 6px;
+            overflow: auto;
+            width: 33%;
+        }
+
+        div.clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        div.gallery-container {
+            height: 38em;
+            margin-top: 10px;
+            overflow: auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: rgba(0, 0, 0, 0.1);
+            padding-top: 10px;
+            border-radius: 5px;
+            justify-content: space-between;
+        }
+
+        main>h2:not(:first-of-type) {
+            text-align: center;
+        }
+
+        main>p {
+            width: 90%;
+        }
+
+        #friends>div>img {
+            width: 40%;
+            border: 2px solid #4f6c38;
+            border-radius: 65px;
+        }
+
+        .marquee p {
+            width: 100% !important;
+            animation: scroll-left 15s linear infinite;
+        }
+
+        #header-container>img {
+            height: 40px !important;
+            image-rendering: pixelated;
+        }
+
+        @media only screen and (max-width: 800px) {
+            div.responsive {
+                width: 49.99999% !important;
+                margin: 6px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            div.responsive {
+                width: 100% !important;
+            }
+
+            div.gallery img {
+                width: 100% !important;
+            }
+
+            div.gallery-container:not(div.desc) {
+                height: 540px !important;
+            }
+
+            #friends>div>img {
+                width: 70% !important;
+            }
+
+            #intro-container {
+                display: flex;
+                flex-direction: column !important;
+            }
+
+            .jukebox {
+                width: auto !important;
+            }
+        }
+
+        #art-years {
+            font-weight: bold;
+            justify-content: space-evenly;
+            font-size: 1.5em;
+            flex-wrap: wrap;
+        }
+
+        .right-image {
+            margin-right: 35px;
+        }
+    
